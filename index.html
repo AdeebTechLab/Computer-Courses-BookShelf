@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salman Adeeb - Digital Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 50;
+      padding: 0;
+    }
+
+    .card {
+      max-width: 800px;
+      background: #fff;
+      margin: 40px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    /* Header Section */
+    .header {
+      background: url("https://res.cloudinary.com/adeeb-tech-lab/image/upload/v1755458468/Artboard_10_splkq7.jpg") no-repeat center/cover;
+      height: 200px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      position: absolute;
+      bottom: -65px;
+      object-fit: cover;
+    }
+
+    /* Content */
+    .content {
+      padding: 90px 30px 30px;
+      text-align: center;
+    }
+
+    .content h2 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .content h4 {
+      margin: 5px 0;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .content p {
+      margin: 10px 0;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Skill Tags */
+    .skills {
+      margin: 15px 0;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #f3f4f6;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin: 5px 5px 0 0;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .cv-btn {
+      background: #4f46e5;
+      color: #fff;
+      border: 2px solid #4f46e5;
+    }
+
+    .cv-btn:hover {
+      background: #3730a3;
+      border-color: #3730a3;
+    }
+
+    .whatsapp-btn {
+      background: #fff;
+      color: #4f46e5;
+      border: 2px solid #4f46e5;
+    }
+
+    .whatsapp-btn:hover {
+      background: #f3f3ff;
+    }
+
+    /* Contact Section */
+    .contact {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 columns */
+      gap: 12px;
+      text-align: left;
+    }
+
+    .contact a {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      background: #f8f9fa;
+      color: #333;
+      font-size: 15px;
+      transition: 0.3s;
+      justify-content: flex-start;
+    }
+
+    .contact a i {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #4f46e5;
+    }
+
+    .contact a:hover {
+      background: #e5e7eb;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+    }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 600px) {
+      .header {
+        height: 150px;
+      }
+
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+        bottom: -50px;
+      }
+
+      .content {
+        padding: 70px 20px 20px;
+      }
+
+      .content h2 {
+        font-size: 22px;
+      }
+
+      .content h4 {
+        font-size: 16px;
+      }
+
+      .skills span {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+  width: 80%;
+  margin: 0px auto;  /* Center alignment */
+  display: block;     /* Ensure it takes full width for centering */
+}
+
+      .contact {
+        grid-template-columns: 1fr; /* mobile pe 1 column */
+      }
+
+      .contact a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Header Section -->
+    <div class="header">
+      <img src="https://res.cloudinary.com/adeeb-tech-lab/image/upload/v1755666790/salman_adeeb_bj627h.webp" alt="Profile Picture" class="profile-pic">
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+      <h2>Salman Adeeb</h2>
+      <h4>SEO</h4>
+      <p><b>Adeeb Technology Lab</b></p>
+      <p>CEO of Adeeb Technology Lab | Graphic Designer | Video Editor | Developer | Cyber Security Expert with 8+ years of experience. Worked with IUB, AndroidBull, RahamTV & more. Explore my portfolio or join my tech community on WhatsApp!</p>
+
+      <!-- Skills -->
+      <div class="skills">
+        <span>Graphic Designing</span>
+        <span>Video Editing</span>
+        <span>Microsoft Office</span>
+        <span>Photo Retouching</span>
+        <span>Animation</span>
+        <span>Architecture</span>
+        <span>Desktop Publisher</span>
+        <span>Social Media Manager</span>
+        <span>Developer</span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="https://drive.google.com/uc?export=download&id=1f1yVQu8J5v0dHRhDAmJmBDRqWCC5RP1A" class="btn cv-btn"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="https://wa.me/923092333121" target="_blank" class="btn whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact">
+        <a href="mailto:AdeebTechnologyLab@gmail.com"><i class="fa-solid fa-envelope"></i> AdeebTechnologyLab@gmail.com</a>
+        <a href="tel:+923092333121"><i class="fa-solid fa-phone"></i> +92 309 2333121</a>
+<a href="https://www.instagram.com/salmanadeeb2/" target="_blank">
+  <i class="fa-brands fa-instagram"></i> Instagram
+</a>
+
+<a href="https://www.linkedin.com/in/salmanadeeb/" target="_blank">
+  <i class="fa-brands fa-linkedin"></i> LinkedIn
+</a>
+
+<a href="https://www.facebook.com/salmanadeeb2" target="_blank">
+  <i class="fa-brands fa-facebook"></i> Facebook
+</a>
+
+<a href="https://www.youtube.com/c/AdeebTechnologyLab" target="_blank">
+  <i class="fa-brands fa-youtube"></i> YouTube
+</a>
+
+<a href="https://x.com/SalmanAdeeb02" target="_blank">
+  <i class="fa-brands fa-twitter"></i> Twitter
+</a>
+        <a href="https://tiktok.com/SalmanAdeeb02" target="_blank">
+  <i class="fa-brands fa-tiktok"></i> TikTok
+</a>
+
+<a href="https://www.adeebtechlab.com/" target="_blank">
+  <i class="fa-solid fa-globe"></i> Website
+</a>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Adeeb Tech Lab • Digital Tech Expert © Salman Adeeb
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
