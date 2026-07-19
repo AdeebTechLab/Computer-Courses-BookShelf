@@ -3,201 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Library | Book Shelf</title>
+<title>Adeeb Technology Lab — Computer Courses</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#f4f7fb;
-  --text:#222;
-  --card:#ffffff;
-  --shadow:rgba(0,0,0,0.08);
-  --primary:#007bff;
-  --secondary:#00c6ff;
-}
-
-body.dark{
-  --bg:#0f172a;
-  --text:#ffffff;
-  --card:#1e293b;
-  --shadow:rgba(0,0,0,0.4);
-  --primary:#ff4b2b;
-  --secondary:#ff416c;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  transition:0.4s ease;
-}
-
-
-.header{
-  text-align:center;
-  padding:60px 20px 30px;
-}
-
-.header h1{
-  font-size:42px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.header p{
-  font-size:16px;
-  max-width:650px;
-  margin:auto;
-  opacity:0.8;
-}
-
-
-.toggle-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  padding:10px 18px;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  font-weight:600;
-  background:linear-gradient(45deg,var(--primary),var(--secondary));
-  color:white;
-  transition:0.3s;
-  z-index:1000;
-}
-
-.toggle-btn:hover{
-  transform:scale(1.05);
-}
-
-
-.book-shelf{
-  width:90%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:40px;
-  padding-bottom:70px;
-}
-
-
-.book{
-  background:var(--card);
-  border-radius:18px;
-  padding:18px;
-  text-align:center;
-  transition:0.4s ease;
-  box-shadow:0 10px 25px var(--shadow);
-}
-
-.book:hover{
-  transform:translateY(-12px) scale(1.04);
-  box-shadow:0 20px 40px var(--shadow);
-}
-
-.book img{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-  border-radius:12px;
-  transition:0.4s;
-}
-
-.book:hover img{
-  transform:scale(1.05);
-}
-
-.book h3{
-  margin:15px 0;
-  font-size:18px;
-  font-weight:600;
-}
-
-
-.book a{
-  display:inline-block;
-  padding:10px 22px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  color:white;
-  background:linear-gradient(45deg,var(--primary),var(--secondary));
-  transition:0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.book a:hover{
-  transform:scale(1.08);
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-.book a:active{
-  background:linear-gradient(45deg,#28a745,#00d084);
-  box-shadow:0 0 20px #00ff99,0 0 40px #00ff99,0 0 60px #00ff99;
-  transform:scale(0.95);
-}
-
-@media(max-width:768px){
-  .header h1{
-    font-size:28px;
-  }
-}
-
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/ATLabLogo.png">
+<link rel="stylesheet" href="style.css">
 </head>
+<body data-theme="light">
 
-<body>
 
-<button class="toggle-btn" onclick="toggleMode()">Dark Mode</button>
+<nav class="nav">
+  <div class="brand">
+   <img src="assets/ATLabLogo.png" alt="Adeeb Technology Lab Logo" class="brand-logo">
+    Adeeb Technology Lab
+  </div>
+  <button class="theme-toggle-icon" onclick="toggleTheme()" id="toggleBtn" aria-label="Toggle theme">
+    ☀️
+  </button>
+</nav>
 
-<div class="header">
-  <h1>💻 Computer Courses </h1>
-  <p>Our academy in Bahawalpur provides practical IT courses to build real-world skills: programming, web & app development, UI/UX, graphic design, digital marketing and more.</p>
+<section class="hero">
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-badge">📚 100% Free Access</div>
+    <h1 class="hero-title">The Computer Courses</h1>
+    <div class="hero-underline">
+      <svg viewBox="0 0 220 12" width="220" height="12">
+        <path d="M2 8 Q 55 2, 110 8 T 218 6" stroke="var(--orange)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="hero-location">Bahawalpur, Islamabad</p>
+    <p class="hero-tagline" id="heroTagline">Access our course books for free — explore, learn, and grow.</p>
+  </div>
+</section>
+
+
+
+<div class="filter-wrap">
+  <div class="search-box">
+    <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="M21 21l-4.3-4.3"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Search courses...">
+  </div>
 </div>
 
-<div class="book-shelf">
-
-
-<div class="book"><img src="assets/Basic_Computer.png"><h3>Basic Computer</h3><a href="https://drive.google.com/drive/folders/15sA6LTlol20uAkg7Gt04LdtsXIzgaNtp?usp=drive_link" target="_blank">View Book</a></div>
-  <div class="book"><img src="assets/Office_Work_[IT].png"><h3>Office Work [IT]</h3><a href="https://drive.google.com/drive/folders/1Q-9ZjoQf8DvMosclBOSkgfjanNNmbBiW?usp=sharing" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/UIUX.png"><h3>UI/UX</h3><a href="https://drive.google.com/drive/folders/1Ku1MGlBRo7H0NloFV6UUYXWekbX2Za2B?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Digital_Marketing.png"><h3>Digital Marketing</h3><a href="https://drive.google.com/drive/folders/1XUhCwR-ZUcDvhzegGMgCJbA6fCpOCJED?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Web_Development.png"><h3>Web Development</h3><a href="https://drive.google.com/drive/folders/1XaZ8YOjlZM2tmCTtQtRz2Ez3Xxas60-F?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Graphic_Design.png"><h3>Graphic Design</h3><a href="https://drive.google.com/drive/folders/1XjkYR1kIckBAoEY0UxuICl7jNwlwDkhz?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/SEO.png"><h3>SEO</h3><a href="https://drive.google.com/drive/folders/1aasyg6osStQ5-nT_TsJ99Md_YspaIW_P?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Video_Editing.png"><h3>Video Editing</h3><a href="https://drive.google.com/drive/folders/146kjbmvcQwOjny-JKl0OT9yR4fXIfJtC?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Truck_Dispatching.png"><h3>Truck Dispatching</h3><a href="https://drive.google.com/drive/folders/1l1LJeKK_KsVQEde5hj35uf0m19kHFJCW?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Trading.png"><h3>Trading</h3><a href="https://drive.google.com/drive/folders/1k675uhh3QjlpB7YSqkgP2DyuhkZ-5RvT?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Taxation.png"><h3>Taxation</h3><a href="https://drive.google.com/drive/folders/1CFUz5R8Beg6heuwgc-ICCL8r7VX7aRaW?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Programming.png"><h3>Programming</h3><a href="https://drive.google.com/drive/folders/1xDez7qHhoTKiJIZHYgkcJsMv7Tk7MVqt?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Internet_of_Thing_[IOT].png"><h3>Internet of Thing [IOT]</h3><a href="https://drive.google.com/drive/folders/1rR22yRSvH4ukoLIZgWFS1safwfB6RtQn?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Machine_Learning.png"><h3>Machine Learning</h3><a href="https://drive.google.com/drive/folders/1M1wNMAFIgInEH7hZkEQ-SEUdsGN5wt8Q?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Cyber_Security.png"><h3>Cyber Security</h3><a href="https://drive.google.com/drive/folders/1UDYUKlImu8KXSGvTXzOAJQzxlhvRPp7d?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Web_Dev_Without_Coding.png"><h3>Web Dev Without Coding</h3><a href="https://drive.google.com/drive/folders/1fGo3qWR999KQ61mw6zTzuDs94A2Q3AfS?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/App_Dev_Without_Coding.png"><h3>App Dev Without Coding</h3><a href="https://drive.google.com/drive/folders/1MEaGWzjN1xs7u5thlKcg521LJabBc8VD?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/App_Development.png"><h3>App Development</h3><a href="https://drive.google.com/drive/folders/1-5pRQhRyyMDALwPAuAGYNc86YhgD5KeP?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Home_Architecture.png"><h3>Home Architecture</h3><a href="https://drive.google.com/drive/folders/1U2E4-4PrPP33WpBYNleC5yBmAlybgEhP?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Youtuber_Course.png"><h3>Youtuber Course</h3><a href="https://drive.google.com/drive/folders/1lk8hYEqpINef4Pi_9Ow_VdTpKLQ4xsn5?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/E_commerce.png"><h3>E commerce</h3><a href="https://drive.google.com/drive/folders/1qFDtFVb6PlY49tHvxOSnojqj4ARFMX9T?usp=drive_link" target="_blank">View Book</a></div>
-<div class="book"><img src="assets/Software_Development.png"><h3>Software Development</h3><a href="https://drive.google.com/drive/folders/1vObuZrkeyTNk4VVgf-GDQc9nP1mLln6s?usp=drive_link" target="_blank">View Book</a></div>
-
+<div class="wrap">
+  <div class="count" id="countLabel"></div>
+  <div class="grid" id="grid"></div>
 </div>
 
+<footer>
+  © 2026 Adeeb Technology Lab — Built for learners, one shelf at a time.
+</footer>
 
-<script>
-function toggleMode(){
-  document.body.classList.toggle("dark");
-  const btn = document.querySelector(".toggle-btn");
-  btn.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
-}
-</script>
+<script src="courses-data.js"></script>
+<script src="script.js"></script>
+<script src="bg-network.js"></script>
 
 </body>
 </html>
